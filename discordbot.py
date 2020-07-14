@@ -3,7 +3,7 @@ import os
 import traceback
 
 bot = commands.Bot(command_prefix='/')
-token = os.environ['DISCORD_BOT_TOKEN']
+token = os.environ['NzAxMzQ2MTg2ODQ5NjgxNDQ5.Xw2lHg.puQvlQM94MB8TdhsJv2O1Se2tRs']
 
 
 @bot.event
@@ -14,8 +14,8 @@ async def on_command_error(ctx, error):
 
 
 @bot.command()
-async def ping(ctx):
-    await ctx.send('pong')
+async def hello(ctx):
+    await ctx.send('Hey,guys.We have gift for you')
 
 
 bot.run(token)
