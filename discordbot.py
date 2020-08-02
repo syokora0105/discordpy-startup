@@ -7,13 +7,6 @@ token = os.environ['DISCORD_BOT_TOKEN']
 
 client = discord.Client()
 
-@client.event
-async def on_ready():
-    print("on_ready")
-    print(discord.__version__)
-
-client.run('DISCORD_BOT_TOKEN')
-
 @bot.event
 async def on_command_error(ctx, error):
     orig_error = getattr(error, "original", error)
