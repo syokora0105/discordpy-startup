@@ -7,10 +7,13 @@ token = os.environ['DISCORD_BOT_TOKEN']
 
 
 @bot.event
-async def on_command_error(ctx, error):
-    orig_error = getattr(error, "original", error)
-    error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
-    await ctx.send(error_msg)
+async def on_massage(massage):
+    try:
+        if massage.author.bot:
+            return
+        await bot.process_commands(massage)
+    except Exeption:
+        await massage.channel.send(f'```\n{traceback.format_exc()}\n```')
 
 
 @bot.command()
